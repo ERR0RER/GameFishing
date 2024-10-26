@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+	transition: 0.1s ease;
+}
+body {
+	overflow: hidden;
+
+}
+.lake {
+	background: rgb(16, 111, 219);
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+.bubble {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	border: 2px solid rgba(0, 0, 255, 0.4);
+	border-radius: 50%;
+	box-shadow: 0 0 20px blue, inset 0 0 20px blue;
+	opacity: 0;
+	animation: fadeInOut 10s forwards;
+}
+.small-bubble {
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	border-radius: 50%;
+	left: 30px;
+	top: 10px;
+}
+
+@keyframes fadeInOut {
+	0% { opacity: 0; }
+	40% { opacity: 1; }
+	60% { opacity: 1; }
+	80% { opacity: 1; }
+	100% { opacity: 0; transform: translateY(-6000px);}
+}
+.line {
+	height: 100vh;
+	width: 1px;
+	background: gray;
+	border: 1px  gray;
+	position: absolute;
+	top: -99vh;
+	left: 21px;
+}
+.hook{
+	position: absolute;
+	pointer-events: none;
+	transition: transform .05s linear;
+	opacity: 0;
+}
+
+.fish {
+	animation: fadeInOutFish 10s forwards;
+  height: 32px;
+  width: 32px;
+  z-index: 1;
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="black"><path d="M508.727,159.883c-14.908-8.942-74.31,45.732-91.456,68.595c-57.163-34.302-108.602-57.164-108.602-57.164 s22.862-100.025-8.578-94.318c-28.638,5.212-81.664,42.558-125.749,77.172C100.033,174.176,10.164,225.086,0,274.201 c28.577,94.318,191.489,140.042,288.66,160.05c47.831,9.852,20.009-57.155,20.009-57.155s51.439-22.87,108.602-57.163 c17.147,22.862,76.548,77.536,91.456,68.594c14.293-8.577-22.862-114.326-22.862-114.326S523.02,168.461,508.727,159.883z M101.69,279.265c-13.027,0-23.582-10.555-23.582-23.582c0-13.018,10.555-23.573,23.582-23.573 c13.018,0,23.573,10.555,23.573,23.573C125.263,268.71,114.708,279.265,101.69,279.265z"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: coral;
+	opacity: 0;
+	position: absolute;
+}
+@keyframes fadeInOutFish {
+	0% { opacity: 0; }
+	10% { opacity: 1; }
+	40% { opacity: 1; }
+	60% { opacity: 1; }
+	80% { opacity: 1; }
+	100% { opacity: 0; transform: translateX(-6000px);}
+}
+.indicators {
+	margin: 10px 0 0 10px;
+	height: 40px;
+	width: 300px;
+	display: flex;
+	gap: 30px;
+}
+.score {
+	font-size: 25px;
+	font-family: "Open Sans", sans-serif;
+	color: aqua;
+	width: 70px;
+	height: 40px;
+	border: 2px solid white;
+	border-radius: 30px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.level {
+
+	font-size: 25px;
+	font-family: "Open Sans", sans-serif;
+	color: aqua;
+	width: 100px;
+	height: 40px;
+	border: 2px solid white;
+	border-radius: 30px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.start-game {
+	flex-direction: column;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 250px;
+	height: 170px;
+	position: absolute;
+	border: 3px solid white;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+	font-size: 25px;
+	font-family: "Open Sans", sans-serif;
+	color: black;
+	font-weight: 700;
+	box-shadow: 0 0 10px white, inset 0 0 10px white;
+}
+.button-start {
+	margin-top: 10px;
+	border: 2px solid white;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-image: url(/ICON/play.png);
+	background-repeat: no-repeat;
+	background-position: 55% 50%;
+	cursor: pointer;
+}
+.background-before-game {
+	
+	opacity: 1;
+	background: rgb(11, 88, 88);
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+}
